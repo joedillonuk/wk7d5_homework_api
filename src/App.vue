@@ -1,18 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+<p v-for="(pokemon, index) in this.AllPokemon" :value="pokemon" :key="index">{{pokemon.name}}</p>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data(){
+    return {
+      AllPokemon: null
+    }
+  },
   components: {
-    HelloWorld
-  }
+
+  },
+  mounted(){
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200')
+    .then(res => res.json())
+    .then(AllPokemon => this.AllPokemon = AllPokemon.results)
+}
 }
 </script>
 
