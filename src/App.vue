@@ -4,7 +4,11 @@
 <!-- <p v-for="(pokemon, index) in this.allPokemon" :value="pokemon" :key="index">{{pokemon.name}}</p> -->
 <pokemon-choose :allPokemon="allPokemon"></pokemon-choose>
 <pokemon-detail :selectedPokemon="selectedPokemon"></pokemon-detail>
+
+
+<canvas  id="canvas" width="150" height="150"></canvas>
   </div>
+
 </template>
 
 <script>
@@ -13,6 +17,23 @@ import { eventBus } from "@/main.js";
 import PokemonChoose from './components/PokemonChoose.vue';
 import PokemonDetail from './components/PokemonDetail.vue';
 
+function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+
+      ctx.arc(75, 75, 75, 0, Math.PI * 2, true); // Pokeball outline
+      ctx.moveTo(150, 75);
+      ctx.arc(75, 75, 30, 0, Math.PI * 2, false);  // pokeball middle outer
+      ctx.moveTo(90, 75);
+      ctx.arc(75, 75, 15, 0, Math.PI * 2, false);  // Pokeball middle inner
+      ctx.moveTo(45, 75);
+      ctx.lineTo(0, 75);
+      ctx.stroke();
+  }
+}
 
 export default {
   name: 'App',
@@ -39,6 +60,7 @@ export default {
     }
 
 
+
   },
   mounted(){
     fetch('https://pokeapi.co/api/v2/pokemon?limit=970')
@@ -47,7 +69,7 @@ export default {
 
 eventBus.$on("pokemon-choose", selectedPokemon => (this.fetchPokemonObject(selectedPokemon)));
 // eventBus.$on("pokemon-list", selectedPokemon => (this.fetchPokemonObject(selectedPokemon)));
-
+draw();
 
 }
 }
@@ -68,4 +90,6 @@ eventBus.$on("pokemon-choose", selectedPokemon => (this.fetchPokemonObject(selec
   color: #2c3e50;
   margin-top: 60px;
 }
+canvas {  }
+
 </style>
