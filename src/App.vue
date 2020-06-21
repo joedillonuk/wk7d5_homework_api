@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-<h1>Choose a Pokemon (this is App)</h1>
+<img src="../public/pokemon_logo.png" alt="Pokemon Logo">
 <!-- <p v-for="(pokemon, index) in this.allPokemon" :value="pokemon" :key="index">{{pokemon.name}}</p> -->
 <pokemon-choose :allPokemon="allPokemon"></pokemon-choose>
 <pokemon-detail :selectedPokemon="selectedPokemon"></pokemon-detail>
@@ -46,6 +46,7 @@ export default {
     .then(allPokemon => this.allPokemon = allPokemon.results)
 
 eventBus.$on("pokemon-choose", selectedPokemon => (this.fetchPokemonObject(selectedPokemon)));
+// eventBus.$on("pokemon-list", selectedPokemon => (this.fetchPokemonObject(selectedPokemon)));
 
 
 }
@@ -53,6 +54,12 @@ eventBus.$on("pokemon-choose", selectedPokemon => (this.fetchPokemonObject(selec
 </script>
 
 <style>
+
+* {
+  background-color: lightblue;
+
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

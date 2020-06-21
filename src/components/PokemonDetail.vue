@@ -72,8 +72,8 @@ export default {
 #pokemonDetail {
   box-sizing: border-box;
   height: 100%;
-  width: 80%;
-  background: #eee;
+  width: 500px;
+  background: #3c5aa6;
   color: #222;
   padding: 10px;
   border: 1px solid #ccc;
@@ -87,6 +87,8 @@ export default {
   padding: 10px;
   height: 100%;
   border-radius: 3px;
+  background-color: lightblue;
+
 }
 
 #flexWrapper {
@@ -102,7 +104,7 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 300px;
+  height: 200px;
   width: auto;
 }
 
