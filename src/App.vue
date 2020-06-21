@@ -24,13 +24,23 @@ function draw() {
 
     ctx.beginPath();
 
+      ctx.arc(75, 75, 75, 0, Math.PI * 1, true); // Pokeball outline
+      ctx.fillStyle = "red";
+      ctx.fill();
       ctx.arc(75, 75, 75, 0, Math.PI * 2, true); // Pokeball outline
+
       ctx.moveTo(150, 75);
       ctx.arc(75, 75, 30, 0, Math.PI * 2, false);  // pokeball middle outer
+      ctx.fillStyle = "white";
+      ctx.fill('evenodd');
       ctx.moveTo(90, 75);
       ctx.arc(75, 75, 15, 0, Math.PI * 2, false);  // Pokeball middle inner
+      ctx.fillStyle = "white";
+      ctx.fill('evenodd');
       ctx.moveTo(45, 75);
       ctx.lineTo(0, 75);
+      ctx.fillStyle = "white";
+      ctx.fill('');
       ctx.stroke();
   }
 }
