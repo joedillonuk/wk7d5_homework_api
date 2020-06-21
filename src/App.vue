@@ -4,7 +4,7 @@
 <!-- <p v-for="(pokemon, index) in this.allPokemon" :value="pokemon" :key="index">{{pokemon.name}}</p> -->
 <pokemon-choose :allPokemon="allPokemon"></pokemon-choose>
 <pokemon-detail :selectedPokemon="selectedPokemon"></pokemon-detail>
-
+<br>
 
 <canvas  id="canvas" width="150" height="150"></canvas>
   </div>

@@ -7,8 +7,16 @@
           <h2>{{selectedPokemon.name}}</h2>
           <div id="flexWrapper">
             <div id="left">
-              <p><span>Name: {{selectedPokemon.name}}</span></p>
-              <p>URL placeholder: {{selectedPokemon.url}}</p>
+              <!-- <p><span>Name: {{selectedPokemon.name}}</span></p> -->
+              <p><b>Type: </b>{{selectedPokemon.types[0].type.name}}</p>
+              <p><b>Height: </b>{{selectedPokemon.height}}</p>
+              <p><b>Weight: </b>{{selectedPokemon.weight}}</p>
+<h3>Abilities</h3>
+<ul>
+  <li>{{selectedPokemon.abilities[0].ability.name}}</li>
+  <li>{{selectedPokemon.abilities[1].ability.name}}</li>
+
+</ul>
               <button v-on:click="handleFave" type="button" name="button">Add to favourites</button>
             </div>
             <div id="right">
