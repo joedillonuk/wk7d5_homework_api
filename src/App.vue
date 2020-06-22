@@ -39,9 +39,10 @@ function draw() {
       ctx.fill('evenodd');
       ctx.moveTo(45, 75);
       ctx.lineTo(0, 75);
-      ctx.fillStyle = "white";
-      ctx.fill('');
-      ctx.stroke();
+      ctx.fillStyle = "red";
+      // ctx.fill('');
+      // ctx.stroke();
+
   }
 }
 

@@ -17,7 +17,7 @@
   <li>{{selectedPokemon.abilities[1].ability.name}}</li>
 
 </ul>
-              <button v-on:click="handleFave" type="button" name="button">Add to favourites</button>
+              <!-- <button v-on:click="handleFave" type="button" name="button">Add to favourites</button> -->
             </div>
             <div id="right">
               <img :src="selectedPokemon.sprites.front_default" alt="Pokemon">
@@ -83,18 +83,21 @@ export default {
   width: 500px;
   background: #3c5aa6;
   color: #222;
-  padding: 10px;
+  padding: 5px;
+  margin-left: 10px;
   border: 1px solid #ccc;
   margin: 0 auto;
+  text-align: left;
+  border-radius: 10px;
 
 }
 
 #detailWrapper {
   box-sizing: border-box;
   background: #fff;
-  padding: 10px;
+  padding: 30px;
   height: 100%;
-  border-radius: 3px;
+  border-radius: 20px;
   background-color: lightblue;
 
 }
@@ -127,6 +130,10 @@ h2 {
 
 p span {
   font-weight: bold;
+}
+
+ul {
+   list-style-type: none;
 }
 
 
